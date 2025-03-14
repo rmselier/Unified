@@ -30,22 +30,34 @@ export default function Welcome() {
                 </section>
 
                 {/* About Sectie */}
-                <section id="about" className="h-screen flex items-center justify-center bg-gray-50 p-6">
-                    <div className="text-center max-w-2xl">
-                        <h1 className="text-6xl font-bold text-yellow-600">About Us</h1>
-                        <p className="mt-4 text-black">
-                            Unified Dance Festival was created to bring the best dancers, artists, and DJs of Kizomba, Bachata, and Salsa together, to unify the three dance cultures in the heart of Europe! <br/><br/>
+                <section id="about" className="min-h-[70vh] flex items-center justify-center bg-gray-70 p-6">
+                    <figure className="max-w-screen-md mx-auto text-center">
+                        <svg className="w-10 h-10 mx-auto mb-3 text-black " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+                            <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+                        </svg>
+                        <blockquote>
+                            <p className="text-2xl italic font-medium text-gray-900 ">
+                                "Unified Dance Festival was created to bring the best dancers, artists, and DJs of Kizomba, Bachata, and Salsa together, to unify the three dance cultures in the heart of Europe! <br/><br/>
 
-                            With the support of an amazing team, we aspire to give our participants an unforgettable experience of the best Salsa beats, passionate and sensual Bachata, and Kizomba moves under one roof. <br/><br/>
+                                With the support of an amazing team, we aspire to give our participants an unforgettable experience of the best Salsa beats, passionate and sensual Bachata, and Kizomba moves under one roof. <br/><br/>
 
-                            Be part of our experience, <strong>LET’S BE UNIFIED!</strong>
-                        </p>
-                    </div>
+                                Be part of our experience, <strong>LET’S BE UNIFIED!</strong>"
+                            </p>
+                        </blockquote>
+                        <figcaption className="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+                            <img className="w-16 h-16 rounded-full" src="/storage/uni_logo.jpg" alt="Unified Dance Festival Logo"/>
+                            <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+                                <cite className="pe-3 font-medium text-gray-900 ">Unified Dance Festival Team</cite>
+                                <cite className="ps-3 text-sm text-gray-500">Luxembourg</cite>
+                            </div>
+                        </figcaption>
+                    </figure>
                 </section>
+
 
                 {/* Venue Sectie */}
                 <section id="venue"
-                         className="hero min-h-screen flex flex-col items-center justify-center text-black"
+                         className="relative hero min-h-screen flex flex-col items-center justify-center text-black"
                          style={{
                              backgroundImage: "url('/storage/venue4.jpg')",
                              backgroundSize: "cover",
@@ -53,35 +65,36 @@ export default function Welcome() {
                          }}>
 
                     {/* Overlay voor een donkere tint op de achtergrond */}
-                    <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="absolute inset-0 bg-gray-100 bg-opacity-60"></div>
 
                     {/* Content in de Venue-sectie */}
-                    <div className="hero-content flex flex-col items-center text-neutral-content text-center w-full">
-                        <h1 className="text-6xl font-bold mb-6 text-white">Venue</h1>
+                    <div className="relative z-10 hero-content flex flex-col items-center text-neutral-content text-center w-full">
+                        <h1 className="text-6xl font-bold mb-6 text-red-900">Venue</h1>
 
                         <div className="flex w-full flex-col lg:flex-row items-center gap-6 p-6">
+
                             {/* Linkerzijde: Carousel */}
-                            <div className="card bg-gray-50 bg-opacity-80 rounded-box h-80 w-full lg:w-1/2 flex justify-center items-center">
-                                <div className="carousel w-full max-w-md">
+                            <div className="card bg-gray-50 bg-opacity-80 rounded-box h-80 w-full lg:w-1/2 flex justify-center items-center overflow-hidden">
+                                <div className="carousel w-full h-full">
                                     {/* Slide 1 */}
-                                    <div className={`carousel-item relative w-full ${currentSlide === 1 ? "block" : "hidden"}`}>
-                                        <img src="/storage/venue1.png" className="w-full rounded-lg" alt="Slide 1" />
+                                    <div className={`carousel-item relative w-full h-full ${currentSlide === 1 ? "block" : "hidden"}`}>
+                                        <img src="/storage/venue1.png" className="w-full h-full object-cover aspect-video rounded-box" alt="Slide 1" />
                                     </div>
 
                                     {/* Slide 2 */}
-                                    <div className={`carousel-item relative w-full ${currentSlide === 2 ? "block" : "hidden"}`}>
-                                        <img src="/storage/venue2.jpg" className="w-full rounded-lg" alt="Slide 2" />
+                                    <div className={`carousel-item relative w-full h-full ${currentSlide === 2 ? "block" : "hidden"}`}>
+                                        <img src="/storage/venue2.jpg" className="w-full h-full object-cover aspect-video rounded-box" alt="Slide 2" />
                                     </div>
 
                                     {/* Slide 3 */}
-                                    <div className={`carousel-item relative w-full ${currentSlide === 3 ? "block" : "hidden"}`}>
-                                        <img src="/storage/venue3.jpg" className="w-full rounded-lg" alt="Slide 3" />
+                                    <div className={`carousel-item relative w-full h-full ${currentSlide === 3 ? "block" : "hidden"}`}>
+                                        <img src="/storage/venue3.jpg" className="w-full h-full object-cover aspect-video rounded-box" alt="Slide 3" />
                                     </div>
 
                                     {/* Navigatie knoppen */}
                                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                        <button onClick={prevSlide} className="btn btn-circle">❮</button>
-                                        <button onClick={nextSlide} className="btn btn-circle">❯</button>
+                                        <button onClick={prevSlide} className="btn btn-circle opacity-50 hover:opacity-80 transition duration-300">❮</button>
+                                        <button onClick={nextSlide} className="btn btn-circle opacity-50 hover:opacity-80 transition duration-300">❯</button>
                                     </div>
                                 </div>
                             </div>
@@ -89,14 +102,114 @@ export default function Welcome() {
                             {/* Rechterzijde: Tekstsectie */}
                             <div className="card bg-gray-50 bg-opacity-80 rounded-box h-80 w-full lg:w-1/2 flex flex-col justify-center items-center p-6 text-center">
                                 <h2 className="text-5xl font-bold text-yellow-600">Our Vision</h2>
-                                <p className="mt-4 text-gray-800">
+                                <p className="mt-4 text-black">
                                     We bring together the best dancers, artists, and DJs from Kizomba, Bachata, and Salsa
                                     to create an unforgettable experience. Join us and be part of something truly special!
                                 </p>
                             </div>
                         </div>
+
+                        {/* Teller-sectie met meerdere animaties */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-10">
+                            {/* Teller 1 */}
+                            <div x-data="{ count: 0 }" x-init="
+        let start = 0;
+        const end = 900;
+        const duration = 3000; // Langzamere animatie (3s)
+        const stepTime = Math.abs(Math.floor(duration / end));
+        let timer = setInterval(() => {
+            start += 5;
+            if (start > end) {
+                start = end;
+                clearInterval(timer);
+            }
+            count = start;
+        }, stepTime);
+    " className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg w-60">
+                                <h2 className="text-4xl font-bold text-yellow-600" x-text="count + ' m²'"></h2>
+                                <p className="text-gray-700">Bachata Sensual</p>
+                            </div>
+
+                            {/* Teller 2 */}
+                            <div x-data="{ count: 0 }" x-init="
+        let start = 0;
+        const end = 200;
+        const duration = 2500; // Sneller klaar dan de 900m², maar nog steeds vloeiend
+        const stepTime = Math.abs(Math.floor(duration / end));
+        let timer = setInterval(() => {
+            start += 2;
+            if (start > end) {
+                start = end;
+                clearInterval(timer);
+            }
+            count = start;
+        }, stepTime);
+    " className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg w-60">
+                                <h2 className="text-4xl font-bold text-yellow-600" x-text="count + ' m²'"></h2>
+                                <p className="text-gray-700">Dominican Bachata Party Floor</p>
+                            </div>
+
+                            {/* Teller 3 */}
+                            <div x-data="{ count: 0 }" x-init="
+        let start = 0;
+        const end = 900;
+        const duration = 3000; // Zelfde snelheid als Teller 1
+        const stepTime = Math.abs(Math.floor(duration / end));
+        let timer = setInterval(() => {
+            start += 5;
+            if (start > end) {
+                start = end;
+                clearInterval(timer);
+            }
+            count = start;
+        }, stepTime);
+    " className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg w-60">
+                                <h2 className="text-4xl font-bold text-yellow-600" x-text="count + ' m²'"></h2>
+                                <p className="text-gray-700">Urban Kiz/Tarraxa/Ghetto Zouk Floor</p>
+                            </div>
+
+                            {/* Teller 4 */}
+                            <div x-data="{ count: 0 }" x-init="
+        let start = 0;
+        const end = 200;
+        const duration = 2500; // Zelfde als Teller 2
+        const stepTime = Math.abs(Math.floor(duration / end));
+        let timer = setInterval(() => {
+            start += 2;
+            if (start > end) {
+                start = end;
+                clearInterval(timer);
+            }
+            count = start;
+        }, stepTime);
+    " className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg w-60">
+                                <h2 className="text-4xl font-bold text-yellow-600" x-text="count + ' m²'"></h2>
+                                <p className="text-gray-700">Kizomba/Semba Party Floor</p>
+                            </div>
+
+                            {/* Teller 5 */}
+                            <div x-data="{ count: 0 }" x-init="
+        let start = 0;
+        const end = 200;
+        const duration = 2500; // Zelfde als Teller 2 en 4
+        const stepTime = Math.abs(Math.floor(duration / end));
+        let timer = setInterval(() => {
+            start += 2;
+            if (start > end) {
+                start = end;
+                clearInterval(timer);
+            }
+            count = start;
+        }, stepTime);
+    " className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg w-60">
+                                <h2 className="text-4xl font-bold text-yellow-600" x-text="count + ' m²'"></h2>
+                                <p className="text-gray-700">Salsa Floor</p>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
+
 
 
                 {/* Tickets Sectie */}

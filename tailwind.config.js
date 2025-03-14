@@ -1,6 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import daisyui from 'daisyui'; // ✅ DaisyUI importeren
+import flowbite from 'flowbite/plugin'; // ✅ Flowbite importeren
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,6 +10,7 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.jsx',
+        'node_modules/flowbite/**/*.js', // ✅ Flowbite componenten insluiten
     ],
 
     theme: {
@@ -21,6 +23,7 @@ export default {
 
     plugins: [
         forms,
-        daisyui, // ✅ DaisyUI toevoegen
+        daisyui,  // ✅ DaisyUI toevoegen
+        flowbite, // ✅ Flowbite toevoegen
     ],
 };
